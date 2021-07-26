@@ -1,0 +1,19 @@
+{
+  "name": "irctc",
+  "version": "1.0.0",
+  "description": "check pnr and station list",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pawanrao100/irctc.git"
+  },
+  "author": "pawan rao",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/pawanrao100/irctc/issues"
+  },
+  "homepage": "https://github.com/pawanrao100/irctc#readme"
+}
