@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title><%= title %></title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+  
+    <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th colspan="5"><center><h2><%= title %></h2></center></th>
+      </tr>
+      <tr>
+        
+        <th>Train Number</th>
+        <th>Train Name</th>
+        <th>Source</th>
+        <th>Destination</th>
+        <th>Arrive Time</th>
+        <th>Depart Time</th>       
+      </tr>
+    </thead>
+    <tbody>
+     
+      <%  trainsData.forEach(function(train,index){ %>
+        <tr>
+          
+          <td><%= train.train_num %></td>
+          <td><%= train.name %></td>
+          <td><%= train.train_from %></td>
+          <td><%= train.train_to %></td>
+          <td><%= train.data.arriveTime %></td>
+          <td><%= train.data.departTime %></td>
+          <!-- <td><%= JSON.stringify(train.data.days) %></td> -->
+        </tr>
+        <%  }); %>
+        
+    </tbody>
+  </table>
+</div>
+
+</body>
+</html>

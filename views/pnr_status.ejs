@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>
+        <%= title %>
+    </title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+
+    <div class="container">
+
+
+        <table class="table table-bordered">
+
+            <tr>
+                <th colspan="4">
+                    <center>
+                        <h2>
+                            <%= title %>
+                        </h2>
+                        <p>You Queried For : PNR Number: <%= pnrNumber %>
+                        </p>
+                    </center>
+                </th>
+
+            </tr>
+
+
+            <tr>
+                <td><strong>Train Number</strong> : <%= pnrData.train_number %>
+                </td>
+                <td><strong>Train Name</strong> : <%= pnrData.train_name %>
+                </td>
+                <td><strong>Boarding Date</strong> : <%= pnrData.departure_data.departure_date %>
+                </td>
+                <td><strong>Arrival Date</strong> : <%= pnrData.arrival_data.arrival_date %>
+                </td>
+
+            </tr>
+
+            <tr>
+                <td><strong>To</strong> : <%= pnrData.reservation_upto %>
+                </td>
+                <td><strong>From</strong> : <%= pnrData.reservation_upto %>
+                </td>
+                <td><strong>Boarding Point</strong> : <%= pnrData.boarding_station %>
+                </td>
+                <td><strong>Class</strong> : <%= pnrData.class %> /<strong>Quota</strong> :<%= pnrData.quota %>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="4">
+                    <center><strong>Passenger Details</strong></center>
+                </td>
+            </tr>
+            <tr>
+             <td colspan="2"><strong>Name</strong></td>
+             <td><strong>Booking status</strong></td>
+             <td><strong>Current Status</strong></td>   
+            </tr>
+            <% pnrData.passenger.forEach(function(data){ %>
+                <tr>
+                    <td colspan="2"><%= data.name %></td>
+                    <td><%= data.booking_status %></td>
+                    <td><%= data.current_status %></td>
+
+                </tr>
+                <% }); %>
+                    <tr>
+                        <td colspan="4">
+                            <center><button class="btn btn-warning" onclick="window.print()">Print</button>&nbsp;&nbsp;<a href="/"><button class="btn btn-primary">Back</button></a></center>
+                        </td>
+                    </tr>
+        </table>
+    </div>
+
+</body>
+
+</html>
