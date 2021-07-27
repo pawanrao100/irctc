@@ -130,6 +130,10 @@ app.post('/searchTrain',(req, res) => {
        
 });
 
-app.listen('8000',()=>{
-    console.log('port running on 8000');
+// app.listen('8000',()=>{
+//     console.log('port running on 8000');
+// });
+
+app.listen(process.env.PORT || 5000,()=>{
+    console.log('running ofn port 5000');
 });
