@@ -53,10 +53,7 @@ app.post('/searchPnr',(req,res)=>{
       };
       
       axios.request(options).then(function (response) {
-          // console.log(response.data);
-        //   console.log(response.data.boarding_station);
-        //   console.log(response.data.passenger[0].name);
-          res.render('pnr_status', {
+            res.render('pnr_status', {
             title : 'Passenger Current Status Enquiry',
             pnrData : response.data,
             pnrNumber: keyword
@@ -86,17 +83,13 @@ app.post('/searchStation',(req, res) => {
         res.render('railway_station_list', {
             title : `Railway Stations in ${keyword}`,
             users : response.data.stations
-            //console.log(response.data);
+            
         });
     }else{
         res.render('error',{
             title: 'Record not found'
           });
         }
-//           console.log(response.data);
-//           response.data.stations.forEach(function(user){
-// console.log(user.stationName); 
-//           });
       }).catch(function (error) {
           res.render('error',{
             title: 'Record not found'
@@ -121,12 +114,10 @@ app.post('/searchTrain',(req, res) => {
       };
       
       axios.request(options).then(function (response) {
-          //console.log(response.data[0].data.days);
           if(Object.keys(response.data).length > 0){
             res.render('train_list', {
                 title : `All trains ${keyword}`,
                 trainsData : response.data
-                //console.log(response.data);
             });
         }else{
             res.render('error',{
