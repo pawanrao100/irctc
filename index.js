@@ -4,6 +4,7 @@ const ejs = require('ejs');
 const bodyParser = require('body-parser');
 const app = express();
 var axios = require("axios").default;
+const port = process.env.PORT || 8000;
 
 //set view file
 app.set('views',path.join(__dirname,'views'));
@@ -130,10 +131,7 @@ app.post('/searchTrain',(req, res) => {
        
 });
 
-// app.listen('8000',()=>{
-//     console.log('port running on 8000');
-// });
+app.listen(port ,()=>{
+    console.log('port running on 8000');
+});
 
-app.listen(process.env.PORT || 3000, function(){
-    console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
-  });
